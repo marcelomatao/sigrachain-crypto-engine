@@ -13,7 +13,6 @@ pub use proof::{generate_merkle_proof, verify_merkle_proof, MerkleProof, ProofDi
 pub use signing::{SigningKeyPair, Signature, verify_signature};
 
 /// Constant-time comparison of two hex-encoded hashes.
-/// Documented in architecture/v1/08-security.md as `secure_compare`.
 pub fn secure_compare(a: &str, b: &str) -> bool {
     proof::ProofVerifier::hashes_equal(a, b).unwrap_or(false)
 }
